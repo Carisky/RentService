@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: rentservice
+  datasource:
+    url: jdbc:postgresql://rentservis.postgres.database.azure.com:5432/rentservice
+    username: cariski
+    password: yolka_today22
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    schemas: public
+    url: jdbc:postgresql://rentservis.postgres.database.azure.com:5432/rentservice
+    user: cariski
+    password: yolka_today22
