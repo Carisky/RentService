@@ -34,4 +34,18 @@ public class ApartmentServiceImpl implements ApartmentService {
     public void deleteById(Long id) {
         apartmentRepository.deleteById(id);
     }
+
+    @Override
+    public Apartment update(Apartment newApartmentData, Long id) {
+        Apartment existingApartment = apartmentRepository.findById(id).orElse(null);
+        if (existingApartment != null) {
+            existingApartment.setAddress(newApartmentData.getAddress());
+            existingApartment.setLandLord(newApartmentData.getLandLord());
+            existingApartment.setRentCost(newApartmentData.getRentCost());
+            existingApartment.setNumberOfRooms(newApartmentData.getNumberOfRooms());
+            return apartmentRepository.save(existingApartment);
+        }
+        return null;
+    }
+
 }

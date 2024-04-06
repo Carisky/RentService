@@ -32,4 +32,16 @@ public class LandLordServiceImpl implements LandLordService {
     public void deleteById(Long id) {
         landLordRepository.deleteById(id);
     }
+
+    @Override
+    public LandLord update(LandLord newLandLordData, Long id) {
+        LandLord existingLandLord = landLordRepository.findById(id).orElse(null);
+        if (existingLandLord != null) {
+            existingLandLord.setName(newLandLordData.getName());
+            existingLandLord.setPhone(newLandLordData.getPhone());
+            existingLandLord.setAddress(newLandLordData.getAddress());
+            return landLordRepository.save(existingLandLord);
+        }
+        return null;
+    }
 }

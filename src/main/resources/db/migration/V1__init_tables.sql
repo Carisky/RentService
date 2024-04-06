@@ -25,9 +25,9 @@ landlord_id INTEGER REFERENCES Landlords(id)
 
 -- Creating the Rent table
 CREATE TABLE Rent (
-id SERIAL PRIMARY KEY,
-client_id INTEGER REFERENCES Clients(id),
-apartment_id INTEGER REFERENCES Apartments(id),
-start_date DATE,
-end_date DATE
+    id SERIAL PRIMARY KEY,
+    client_id INTEGER REFERENCES Clients(id) ON DELETE CASCADE,
+    apartment_id INTEGER REFERENCES Apartments(id) ON DELETE CASCADE,
+    start_date DATE,
+    end_date DATE
 );

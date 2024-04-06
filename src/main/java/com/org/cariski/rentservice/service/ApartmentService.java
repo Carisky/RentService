@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ApartmentService {
-    public List<Apartment> findAll();
-    public Optional<Apartment> findById(Long id);
-    public void save(Apartment apartment);
-    public void deleteById(Long id);
+    List<Apartment> findAll();
+    Optional<Apartment> findById(Long id);
+    void save(Apartment apartment);
+    void deleteById(Long id);
+    Apartment update(Apartment newApartmentData, Long id);
 }

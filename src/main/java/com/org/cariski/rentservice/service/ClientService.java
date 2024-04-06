@@ -6,8 +6,9 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ClientService {
-    public List<Client> findAll();
-    public Optional<Client> findById(Long id);
-    public void save(Client client);
-    public void deleteById(Long id);
+    List<Client> findAll();
+    Optional<Client> findById(Long id);
+    void save(Client client);
+    Client update(Client client,Long id);
+    void deleteById(Long id);
 }

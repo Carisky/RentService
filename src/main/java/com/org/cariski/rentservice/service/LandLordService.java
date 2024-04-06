@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 public interface LandLordService {
-    public List<LandLord> findAll();
-    public Optional<LandLord> findById(Long id);
-    public void save(LandLord landLord);
-    public void deleteById(Long id);
+    List<LandLord> findAll();
+    Optional<LandLord> findById(Long id);
+    void save(LandLord landLord);
+    void deleteById(Long id);
+
+    LandLord update(LandLord newLandLordData, Long id);
 }

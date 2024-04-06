@@ -29,6 +29,19 @@ public class RentServiceImpl implements RentService {
     }
 
     @Override
+    public Rent update(Rent newRentData, Long id) {
+        Rent existingRent = rentRepository.findById(id).orElse(null);
+        if (existingRent != null) {
+            existingRent.setStartDate(newRentData.getStartDate());
+            existingRent.setEndDate(newRentData.getEndDate());
+            existingRent.setApartment(newRentData.getApartment());
+            existingRent.setClient(newRentData.getClient());
+            return rentRepository.save(existingRent);
+        }
+        return null;
+    }
+
+    @Override
     public void deleteById(Long id) {
         rentRepository.deleteById(id);
     }
