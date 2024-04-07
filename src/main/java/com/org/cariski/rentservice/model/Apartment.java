@@ -1,4 +1,7 @@
 package com.org.cariski.rentservice.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.org.cariski.rentservice.model.LandLord;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,7 +29,6 @@ public class Apartment {
 
     @ManyToOne
     @JoinColumn(name = "landlord_id")
-    private LandLord landLord;
-
+    @JsonIgnore
+    private LandLord landlord;
 }
-

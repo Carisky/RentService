@@ -34,8 +34,8 @@ public class RentServiceImpl implements RentService {
         if (existingRent != null) {
             existingRent.setStartDate(newRentData.getStartDate());
             existingRent.setEndDate(newRentData.getEndDate());
-            existingRent.setApartment(newRentData.getApartment());
-            existingRent.setClient(newRentData.getClient());
+            existingRent.setClient(existingRent.getClient());
+            existingRent.setApartment(existingRent.getApartment());
             return rentRepository.save(existingRent);
         }
         return null;

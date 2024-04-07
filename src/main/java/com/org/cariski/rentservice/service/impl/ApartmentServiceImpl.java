@@ -40,7 +40,7 @@ public class ApartmentServiceImpl implements ApartmentService {
         Apartment existingApartment = apartmentRepository.findById(id).orElse(null);
         if (existingApartment != null) {
             existingApartment.setAddress(newApartmentData.getAddress());
-            existingApartment.setLandLord(newApartmentData.getLandLord());
+            existingApartment.setLandlord(newApartmentData.getLandlord());
             existingApartment.setRentCost(newApartmentData.getRentCost());
             existingApartment.setNumberOfRooms(newApartmentData.getNumberOfRooms());
             return apartmentRepository.save(existingApartment);
